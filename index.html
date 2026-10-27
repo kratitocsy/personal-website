@@ -12,19 +12,24 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://aryansengar.wynko.in/assets/maglion-hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#0b0b0d">
+  <meta name="theme-color" content="#08080a">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
 
   <header class="nav" id="nav">
+    <div class="progress" id="progress" aria-hidden="true"></div>
     <div class="wrap nav-inner">
-      <a href="#top" class="brand">Aryan Sengar</a>
+      <a href="#top" class="brand" aria-label="Aryan Sengar, home">
+        <span class="mark">AS</span><span class="brand-name">Aryan Sengar</span>
+      </a>
       <nav aria-label="Primary">
         <ul>
           <li><a href="#maglion">Maglion</a></li>
@@ -39,51 +44,142 @@
   <main id="main">
     <!-- HERO -->
     <section class="hero" id="top">
-      <div class="wrap">
-        <p class="status"><span class="dot" aria-hidden="true"></span> Now: preparing a low-cost bench test for Maglion</p>
-        <h1>Aryan Singh Sengar</h1>
-        <p class="lede">
-          I'm 17, from Khajuraho, India. I build software and like solving hard problems
-          that look like science fiction today.
+      <canvas id="field" aria-hidden="true"></canvas>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <p class="status intro" style="--d:.1s"><span class="dot" aria-hidden="true"></span> Now: preparing a low-cost bench test for Maglion</p>
+        <h1 class="hero-title">
+          <span class="ln"><span class="intro-up" style="--d:.2s">Aryan Singh</span></span>
+          <span class="ln"><span class="intro-up shine" style="--d:.35s">Sengar</span></span>
+        </h1>
+        <p class="rotator intro" style="--d:.6s">I build <span class="rot" id="rot">things that look like science fiction.</span><span class="caret" aria-hidden="true"></span></p>
+        <p class="hero-sub intro" style="--d:.75s">
+          17, from Khajuraho, India. I work under cost constraints on purpose, so what we make
+          stays affordable for both makers and users, not a luxury.
         </p>
-        <p class="sub">
-          I work under cost constraints on purpose, so what we make stays affordable for both
-          makers and users, not a luxury.
-        </p>
-        <div class="cta">
-          <a class="btn primary" href="#maglion">See Maglion</a>
-          <a class="btn" href="mailto:kiarase2288@gmail.com">Email me</a>
+        <div class="cta intro" style="--d:.9s">
+          <a class="btn primary magnetic" href="#maglion"><span>See Maglion</span></a>
+          <a class="btn ghost magnetic" href="mailto:kiarase2288@gmail.com"><span>Email me</span></a>
         </div>
+        <ul class="hero-facts intro" style="--d:1.05s">
+          <li><b>Maglion</b><span>EV charging in guardrails</span></li>
+          <li><b>Wynko</b><span>Focus tools · live</span></li>
+          <li><b>Robotics</b><span>Cross-embodiment research</span></li>
+        </ul>
       </div>
-      <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0 90 C 300 30, 600 30, 760 70 S 1200 110, 1440 50" />
-        <path d="M0 105 C 320 55, 640 60, 780 85 S 1200 115, 1440 75" />
-      </svg>
+      <a href="#maglion" class="scroll-cue" aria-label="Scroll to Maglion"><span></span></a>
     </section>
 
     <!-- MAGLION -->
     <section class="section" id="maglion">
       <div class="wrap">
-        <p class="kicker">Main project</p>
-        <div class="maglion-head reveal">
-          <img class="maglion-logo" src="assets/maglion-logo.png" width="640" height="209" alt="Maglion — Beyond Roads">
-          <h2>Wireless EV charging built into highway guardrails</h2>
-          <p class="muted">
-            Charge the car while it drives, through the guardrail, powered by solar panels along the road.
-            Idea stage: tested by computer simulation, not yet built.
+        <p class="kicker reveal"><span>01</span> Main project</p>
+        <div class="maglion-head">
+          <img class="maglion-logo reveal" src="assets/maglion-logo.png" width="640" height="209" alt="Maglion — Beyond Roads">
+          <h2 class="reveal">Charge the car <em>while it drives.</em></h2>
+          <p class="muted lead reveal">
+            Wireless EV charging built into highway guardrails and median barriers, powered by solar
+            panels along the road. Idea stage: tested by computer simulation, not yet built.
           </p>
         </div>
 
-        <div class="grid3 reveal">
-          <article class="card">
+        <!-- Animated demo -->
+        <div class="demo reveal" id="demo">
+          <div class="hud" aria-live="off">
+            <div class="hud-top"><span class="hud-label">Battery</span><span class="hud-val" id="batt">38%</span></div>
+            <div class="bar"><i id="battbar"></i></div>
+            <span class="chip" id="chg">Driving</span>
+          </div>
+          <svg viewBox="0 0 1000 260" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Animation: a car drives along a highway and charges wirelessly each time it passes a glowing coil in the guardrail, which is powered by solar panels above.">
+            <defs>
+              <linearGradient id="carGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e9e6e1"/>
+                <stop offset=".55" stop-color="#9c9890"/>
+                <stop offset="1" stop-color="#4a4844"/>
+              </linearGradient>
+              <linearGradient id="roadGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#16161a"/>
+                <stop offset="1" stop-color="#0c0c0e"/>
+              </linearGradient>
+              <filter id="glow" x="-50%" y="-200%" width="200%" height="500%">
+                <feGaussianBlur stdDeviation="5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <pattern id="posts" width="80" height="40" patternUnits="userSpaceOnUse">
+                <rect x="38" width="4" height="40" fill="#24242a"/>
+              </pattern>
+            </defs>
+
+            <circle class="sun" cx="965" cy="34" r="15" fill="#eaa54c" filter="url(#glow)"/>
+
+            <!-- solar panels + feed lines -->
+            <g class="panels">
+              <g transform="translate(270 0)">
+                <line class="feed" x1="0" y1="66" x2="0" y2="120"/>
+                <polygon points="-48,68 48,68 36,42 -36,42" fill="#17223a" stroke="#3b5584"/>
+                <path d="M-16 42 L-20 68 M16 42 L20 68 M-42 55 L42 55" stroke="#3b5584" stroke-width="1"/>
+              </g>
+              <g transform="translate(560 0)">
+                <line class="feed" x1="0" y1="66" x2="0" y2="120"/>
+                <polygon points="-48,68 48,68 36,42 -36,42" fill="#17223a" stroke="#3b5584"/>
+                <path d="M-16 42 L-20 68 M16 42 L20 68 M-42 55 L42 55" stroke="#3b5584" stroke-width="1"/>
+              </g>
+              <g transform="translate(850 0)">
+                <line class="feed" x1="0" y1="66" x2="0" y2="120"/>
+                <polygon points="-48,68 48,68 36,42 -36,42" fill="#17223a" stroke="#3b5584"/>
+                <path d="M-16 42 L-20 68 M16 42 L20 68 M-42 55 L42 55" stroke="#3b5584" stroke-width="1"/>
+              </g>
+            </g>
+
+            <!-- guardrail -->
+            <rect x="0" y="122" width="1000" height="40" fill="url(#posts)"/>
+            <rect x="0" y="118" width="1000" height="12" rx="3" fill="#2c2c33"/>
+            <rect x="0" y="134" width="1000" height="4" rx="2" fill="#222228"/>
+            <rect class="coil" x="235" y="117" width="70" height="14" rx="4" filter="url(#glow)"/>
+            <rect class="coil" x="525" y="117" width="70" height="14" rx="4" filter="url(#glow)"/>
+            <rect class="coil" x="815" y="117" width="70" height="14" rx="4" filter="url(#glow)"/>
+
+            <!-- road -->
+            <rect x="0" y="162" width="1000" height="98" fill="url(#roadGrad)"/>
+            <line x1="0" y1="162" x2="1000" y2="162" stroke="#2a2a30"/>
+            <line class="lane" x1="0" y1="242" x2="1000" y2="242" stroke="#34343b" stroke-width="3" stroke-dasharray="34 26"/>
+
+            <!-- energy beams -->
+            <g id="beams" opacity="0">
+              <line class="beam" x1="0" y1="131" x2="0" y2="183"/>
+              <line class="beam" x1="0" y1="131" x2="0" y2="183"/>
+              <line class="beam" x1="0" y1="131" x2="0" y2="183"/>
+            </g>
+
+            <!-- car -->
+            <g id="car" transform="translate(420 152)">
+              <ellipse cx="74" cy="54" rx="72" ry="5" fill="#000" opacity=".55"/>
+              <path d="M4 40 Q2 31 11 29 L30 25 Q45 8 67 6 L97 6 Q113 8 125 22 L137 26 Q145 28 145 37 L145 44 L4 44 Z" fill="url(#carGrad)"/>
+              <path d="M39 24 Q49 12 66 11 L80 11 L80 24 Z" fill="#0b1018"/>
+              <path d="M85 11 L96 11 Q108 13 116 24 L85 24 Z" fill="#0b1018"/>
+              <rect id="strip" x="18" y="31" width="116" height="3" rx="1.5" fill="#eaa54c" opacity=".35"/>
+              <rect x="140" y="30" width="6" height="4" rx="1" fill="#fff4dc"/>
+              <rect x="3" y="31" width="5" height="4" rx="1" fill="#d6463a"/>
+              <g class="wheel"><circle cx="33" cy="44" r="10.5" fill="#0a0a0c" stroke="#5a5a62" stroke-width="3"/><path d="M33 37 V51 M26 44 H40" stroke="#5a5a62" stroke-width="1.5"/></g>
+              <g class="wheel"><circle cx="117" cy="44" r="10.5" fill="#0a0a0c" stroke="#5a5a62" stroke-width="3"/><path d="M117 37 V51 M110 44 H124" stroke="#5a5a62" stroke-width="1.5"/></g>
+            </g>
+          </svg>
+          <p class="demo-cap">Illustration of the idea, not a built system.</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card spot reveal">
+            <span class="num">A</span>
             <h3>The battery is the biggest cost</h3>
             <p>A bigger battery means a higher price for every EV.</p>
           </article>
-          <article class="card">
+          <article class="card spot reveal">
+            <span class="num">B</span>
             <h3>Charging takes time</h3>
             <p>Drivers stop and wait to recharge, which limits long trips.</p>
           </article>
-          <article class="card">
+          <article class="card spot reveal">
+            <span class="num">C</span>
             <h3>Road charging is costly to build</h3>
             <p>Coils buried in the road mean digging it up to install, and digging again to repair.</p>
           </article>
@@ -91,142 +187,186 @@
 
         <h3 class="subhead reveal">How it works</h3>
         <ol class="flow reveal">
-          <li><strong>Solar panels</strong><span>Roadside power</span></li>
-          <li><strong>Guardrail coil</strong><span>Inside the barrier</span></li>
-          <li><strong>Vehicle coil</strong><span>On the car's side</span></li>
-          <li><strong>Battery</strong><span>Charges as it drives</span></li>
+          <li><span class="step">01</span><strong>Solar panels</strong><span>Roadside power</span></li>
+          <li><span class="step">02</span><strong>Guardrail coil</strong><span>Inside the barrier</span></li>
+          <li><span class="step">03</span><strong>Vehicle coil</strong><span>On the car's side</span></li>
+          <li><span class="step">04</span><strong>Battery</strong><span>Charges as it drives</span></li>
         </ol>
         <p class="muted small reveal">The coils pair up and pass energy across the gap: the same idea as wireless phone charging, at road scale. In cities, charging pads sit where vehicles stop.</p>
 
         <figure class="concept reveal">
-          <img src="assets/maglion-concept.jpg" width="1600" height="1067" loading="lazy"
-               alt="Concept illustration of a highway with solar panels on side structures, charging segments in guardrails, and wireless charging pads for two-wheelers.">
-          <figcaption>Concept illustration of the Maglion network, not a photo of a built system.</figcaption>
+          <a href="assets/maglion-concept.jpg" target="_blank" rel="noopener">
+            <img src="assets/maglion-concept.jpg" width="1600" height="1067" loading="lazy"
+                 alt="Concept illustration of a highway with solar panels on side structures, charging segments in guardrails, and wireless charging pads for two-wheelers.">
+          </a>
+          <figcaption>Concept illustration of the Maglion network, not a photo of a built system. Click to enlarge.</figcaption>
         </figure>
 
-        <div class="stats reveal">
-          <div class="stat">
-            <p class="big">Up to ½</p>
+        <div class="stats">
+          <div class="stat spot reveal">
+            <p class="big">Up to <span class="frac">½</span></p>
             <p>the battery size, if cars charge as they drive.</p>
             <p class="note">My estimate from simulations, not a measured result.</p>
           </div>
-          <div class="stat">
-            <p class="big">3–5×</p>
+          <div class="stat spot reveal">
+            <p class="big"><span data-count="3">3</span>–<span data-count="5">5</span>×</p>
             <p>lower infrastructure cost, by using guardrails the road already has instead of digging it up.</p>
             <p class="note">A target, not yet proven.</p>
           </div>
         </div>
 
-        <div class="grid3 reveal">
-          <article class="card">
+        <div class="grid3">
+          <article class="card spot reveal">
             <h3 class="accent">Done</h3>
-            <ul>
+            <ul class="checks">
               <li>Computer simulations suggest it can work</li>
               <li>Applied to Emergent Ventures for a grant</li>
             </ul>
           </article>
-          <article class="card">
+          <article class="card spot reveal">
             <h3 class="accent">Next</h3>
-            <ul>
+            <ul class="arrows">
               <li>A low-cost bench test of the coils</li>
               <li>Find a power-electronics partner</li>
             </ul>
           </article>
-          <article class="card highlight">
-            <h3 class="accent">Why heavy vehicles gain most</h3>
+          <article class="card spot highlight reveal">
+            <h3 class="accent">Heavy vehicles gain most</h3>
             <p>Trucks and buses carry huge, heavy batteries. Charging while moving means smaller batteries, less weight, fewer stops and no battery swapping.</p>
           </article>
         </div>
-        <p class="reveal"><a class="link" href="mailto:kiarase2288@gmail.com?subject=Maglion">Interested in partnering or helping with the bench test? Get in touch →</a></p>
+        <p class="reveal"><a class="link arrow-link" href="mailto:kiarase2288@gmail.com?subject=Maglion">Interested in partnering or helping with the bench test? Get in touch <span>→</span></a></p>
       </div>
     </section>
 
     <!-- OTHER WORK -->
     <section class="section alt" id="work">
       <div class="wrap">
-        <p class="kicker">Other work</p>
-        <h2 class="reveal">Things I'm building and researching</h2>
+        <p class="kicker reveal"><span>02</span> Other work</p>
+        <h2 class="reveal">Things I'm building <em>and researching.</em></h2>
 
         <div class="projects">
-          <article class="project reveal">
-            <div class="project-meta"><span class="tag">Research in progress</span></div>
-            <h3>Cross-embodiment robot learning</h3>
-            <p>
-              Moving what one robot learns to a different robot type is a big bottleneck in robotics.
-              My idea: classify robots the way Carl Linnaeus classified living species, grouping them
-              by how well their parts (motors, joints, torque) transfer to one another, so a robot can
-              learn from the best-matching donor type.
-            </p>
-            <ul>
-              <li>Building an SDK for robot failure logging: when an incident happens, record torque, motor power and similar data from first principles and send it to the cloud for simulation.</li>
-              <li>Early result: matching individual parts across randomised robot combinations has so far beaten transferring a whole robot to another whole robot. These are early results and may change as I test more.</li>
-            </ul>
+          <article class="project spot tilt reveal">
+            <div class="project-index">01</div>
+            <div class="project-body">
+              <div class="project-meta"><span class="tag">Research in progress</span></div>
+              <h3>Cross-embodiment robot learning</h3>
+              <p>
+                Moving what one robot learns to a different robot type is a big bottleneck in robotics.
+                My idea: classify robots the way Carl Linnaeus classified living species, grouping them
+                by how well their parts (motors, joints, torque) transfer to one another, so a robot can
+                learn from the best-matching donor type.
+              </p>
+              <ul>
+                <li>Building an SDK for robot failure logging: when an incident happens, record torque, motor power and similar data from first principles and send it to the cloud for simulation.</li>
+                <li>Early result: matching individual parts across randomised robot combinations has so far beaten transferring a whole robot to another whole robot. These are early results and may change as I test more.</li>
+              </ul>
+            </div>
           </article>
 
-          <article class="project reveal">
-            <div class="project-meta"><span class="tag">Software · live</span><a class="link" href="https://wynko.in">wynko.in ↗</a></div>
-            <h3>Wynko</h3>
-            <p>
-              A website, desktop app, Focus Lock browser extension and Android app that help people
-              stay away from distractions while studying, giving breaks and blocking autonomously.
-            </p>
-            <ul>
-              <li>Recruited a team from Reddit to build it alongside me.</li>
-              <li>When tool costs became a limit, started a side business (social media management, websites and solutions for shopkeepers) that paid for our development tools and stipends for the team.</li>
-            </ul>
+          <article class="project spot tilt reveal">
+            <div class="project-index">02</div>
+            <div class="project-body">
+              <div class="project-meta"><span class="tag">Software · live</span><a class="link arrow-link" href="https://wynko.in">wynko.in <span>↗</span></a></div>
+              <h3>Wynko</h3>
+              <p>
+                A website, desktop app, Focus Lock browser extension and Android app that help people
+                stay away from distractions while studying, giving breaks and blocking autonomously.
+              </p>
+              <ul>
+                <li>Recruited a team from Reddit to build it alongside me.</li>
+                <li>When tool costs became a limit, started a side business (social media management, websites and solutions for shopkeepers) that paid for our development tools and stipends for the team.</li>
+              </ul>
+            </div>
           </article>
 
-          <article class="project reveal">
-            <div class="project-meta"><span class="tag">Tooling</span></div>
-            <h3>Low-cost AI coding setup</h3>
-            <p>Built when I couldn't afford paid tools.</p>
-            <ul>
-              <li>Hosted open-source models on free cloud notebooks like Kaggle, with Qwen as the text model.</li>
-              <li>Added LiteLLM as the gateway, Llama on Groq's free tier as the vision model, and a headless browser: the text model writes code and the vision model checks how the page renders.</li>
-              <li>Wrapped it all as one API endpoint and used it inside Claude Code.</li>
-            </ul>
+          <article class="project spot tilt reveal">
+            <div class="project-index">03</div>
+            <div class="project-body">
+              <div class="project-meta"><span class="tag">Tooling</span></div>
+              <h3>Low-cost AI coding setup</h3>
+              <p>Built when I couldn't afford paid tools.</p>
+              <ul>
+                <li>Hosted open-source models on free cloud notebooks like Kaggle, with Qwen as the text model.</li>
+                <li>Added LiteLLM as the gateway, Llama on Groq's free tier as the vision model, and a headless browser: the text model writes code and the vision model checks how the page renders.</li>
+                <li>Wrapped it all as one API endpoint and used it inside Claude Code.</li>
+              </ul>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- SKILLS MARQUEE -->
+    <div class="marquee" aria-label="Tools I use">
+      <div class="marquee-track">
+        <ul>
+          <li>Linux</li><li>Python</li><li>Rust</li><li>Java</li><li>Kotlin</li><li>Android apps</li>
+          <li>Windows apps</li><li>Next.js</li><li>HTML &amp; CSS</li><li>Tailwind CSS</li><li>Figma</li><li>Multi-agent AI orchestration</li>
+        </ul>
+        <ul aria-hidden="true">
+          <li>Linux</li><li>Python</li><li>Rust</li><li>Java</li><li>Kotlin</li><li>Android apps</li>
+          <li>Windows apps</li><li>Next.js</li><li>HTML &amp; CSS</li><li>Tailwind CSS</li><li>Figma</li><li>Multi-agent AI orchestration</li>
+        </ul>
+      </div>
+    </div>
+
     <!-- STORY -->
     <section class="section" id="story">
-      <div class="wrap story">
-        <div>
-          <p class="kicker">Story</p>
-          <h2 class="reveal">Coding from a notebook</h2>
-          <p class="reveal">
-            I taught myself to code in 4th standard, with no computer at home. I wrote programs in a
-            notebook and ran them on school computers. I loved it so much I wrote 200 to 300 programs a day,
-            until my computer teachers started asking how I was doing it. I got my own computer only after
-            10th standard.
-          </p>
-          <p class="reveal">
-            I learn any technology fastest by building with it rather than reading theory.
-          </p>
-          <p class="reveal milestone"><span class="mono">IAT</span> Rank 3846 in the IISER Aptitude Test, the entrance exam for India's IISER research institutes.</p>
+      <div class="wrap">
+        <p class="kicker reveal"><span>03</span> Story</p>
+        <h2 class="reveal">Coding from <em>a notebook.</em></h2>
+
+        <div class="counters">
+          <div class="counter reveal"><b><span data-count="4">4</span><sup>th</sup></b><span>standard, when I taught myself to code</span></div>
+          <div class="counter reveal"><b><span data-count="300">300</span></b><span>programs a day, at my peak</span></div>
+          <div class="counter reveal"><b><span data-count="3846">3846</span></b><span>rank in the IISER Aptitude Test</span></div>
         </div>
-        <div class="reveal">
-          <h3 class="subhead">Tools I use</h3>
-          <ul class="chips">
-            <li>Linux</li><li>Python</li><li>Rust</li><li>Java</li><li>Kotlin</li>
-            <li>Android apps</li><li>Windows apps</li><li>Next.js</li><li>HTML &amp; CSS</li>
-            <li>Tailwind CSS</li><li>Figma</li><li>Multi-agent AI orchestration</li>
-          </ul>
-        </div>
+
+        <ol class="timeline" id="timeline">
+          <li class="reveal">
+            <span class="when">4th standard</span>
+            <h3>No computer at home</h3>
+            <p>I wrote programs in a notebook and ran them on school computers.</p>
+          </li>
+          <li class="reveal">
+            <span class="when">School years</span>
+            <h3>200 to 300 programs a day</h3>
+            <p>I loved it so much that my computer teachers started asking how I was doing it.</p>
+          </li>
+          <li class="reveal">
+            <span class="when">After 10th standard</span>
+            <h3>My own computer</h3>
+            <p>Finally. I learn any technology fastest by building with it rather than reading theory.</p>
+          </li>
+          <li class="reveal">
+            <span class="when">Wynko</span>
+            <h3>A team and a side business</h3>
+            <p>Recruited a team from Reddit, and ran a side business to pay for our tools and their stipends.</p>
+          </li>
+          <li class="reveal">
+            <span class="when">IISER Aptitude Test</span>
+            <h3>Rank 3846</h3>
+            <p>The entrance exam for India's IISER research institutes.</p>
+          </li>
+          <li class="reveal now">
+            <span class="when">Now</span>
+            <h3>Maglion and robot learning</h3>
+            <p>Simulations done and a grant application sent for Maglion, while researching cross-embodiment robot learning.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section class="section contact" id="contact">
       <div class="wrap">
-        <p class="kicker">Contact</p>
-        <h2 class="reveal">Let's talk</h2>
+        <p class="kicker reveal"><span>04</span> Contact</p>
+        <h2 class="contact-title reveal">Let's build something that looks like <em>science fiction.</em></h2>
         <p class="muted reveal">Grants, partnerships, research, or just an interesting problem: my inbox is open.</p>
-        <a class="btn primary reveal" href="mailto:kiarase2288@gmail.com">kiarase2288@gmail.com</a>
+        <div class="reveal"><a class="btn primary big magnetic" href="mailto:kiarase2288@gmail.com"><span>kiarase2288@gmail.com</span></a></div>
         <ul class="socials reveal">
-          <li><a href="https://github.com/kratitocsy">GitHub · kratitocsy</a></li>
+          <li><a href="https://github.com/kratitocsy">GitHub</a></li>
           <li><a href="https://wynko.in">Wynko</a></li>
         </ul>
       </div>
@@ -234,7 +374,10 @@
   </main>
 
   <footer class="footer">
-    <div class="wrap">© <span id="year">2026</span> Aryan Singh Sengar · Khajuraho, India</div>
+    <div class="wrap footer-inner">
+      <span>© <span id="year">2026</span> Aryan Singh Sengar</span>
+      <span>Khajuraho, India</span>
+    </div>
   </footer>
 
   <script src="script.js"></script>
