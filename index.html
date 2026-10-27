@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aryan Singh Sengar</title>
+  <meta name="description" content="Aryan Singh Sengar, 17, from Khajuraho, India. Building Maglion (wireless EV charging in highway guardrails), Wynko, and research on cross-embodiment robot learning.">
+  <link rel="canonical" href="https://aryansengar.wynko.in/">
+  <meta property="og:title" content="Aryan Singh Sengar">
+  <meta property="og:description" content="17-year-old builder from Khajuraho, India. Working on Maglion: wireless EV charging built into highway guardrails.">
+  <meta property="og:url" content="https://aryansengar.wynko.in/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://aryansengar.wynko.in/assets/maglion-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0b0b0d">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand">Aryan Sengar</a>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#maglion">Maglion</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#story">Story</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="wrap">
+        <p class="status"><span class="dot" aria-hidden="true"></span> Now: preparing a low-cost bench test for Maglion</p>
+        <h1>Aryan Singh Sengar</h1>
+        <p class="lede">
+          I'm 17, from Khajuraho, India. I build software and like solving hard problems
+          that look like science fiction today.
+        </p>
+        <p class="sub">
+          I work under cost constraints on purpose, so what we make stays affordable for both
+          makers and users, not a luxury.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#maglion">See Maglion</a>
+          <a class="btn" href="mailto:kiarase2288@gmail.com">Email me</a>
+        </div>
+      </div>
+      <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 90 C 300 30, 600 30, 760 70 S 1200 110, 1440 50" />
+        <path d="M0 105 C 320 55, 640 60, 780 85 S 1200 115, 1440 75" />
+      </svg>
+    </section>
+
+    <!-- MAGLION -->
+    <section class="section" id="maglion">
+      <div class="wrap">
+        <p class="kicker">Main project</p>
+        <div class="maglion-head reveal">
+          <img class="maglion-logo" src="assets/maglion-logo.png" width="640" height="209" alt="Maglion — Beyond Roads">
+          <h2>Wireless EV charging built into highway guardrails</h2>
+          <p class="muted">
+            Charge the car while it drives, through the guardrail, powered by solar panels along the road.
+            Idea stage: tested by computer simulation, not yet built.
+          </p>
+        </div>
+
+        <div class="grid3 reveal">
+          <article class="card">
+            <h3>The battery is the biggest cost</h3>
+            <p>A bigger battery means a higher price for every EV.</p>
+          </article>
+          <article class="card">
+            <h3>Charging takes time</h3>
+            <p>Drivers stop and wait to recharge, which limits long trips.</p>
+          </article>
+          <article class="card">
+            <h3>Road charging is costly to build</h3>
+            <p>Coils buried in the road mean digging it up to install, and digging again to repair.</p>
+          </article>
+        </div>
+
+        <h3 class="subhead reveal">How it works</h3>
+        <ol class="flow reveal">
+          <li><strong>Solar panels</strong><span>Roadside power</span></li>
+          <li><strong>Guardrail coil</strong><span>Inside the barrier</span></li>
+          <li><strong>Vehicle coil</strong><span>On the car's side</span></li>
+          <li><strong>Battery</strong><span>Charges as it drives</span></li>
+        </ol>
+        <p class="muted small reveal">The coils pair up and pass energy across the gap: the same idea as wireless phone charging, at road scale. In cities, charging pads sit where vehicles stop.</p>
+
+        <figure class="concept reveal">
+          <img src="assets/maglion-concept.jpg" width="1600" height="1067" loading="lazy"
+               alt="Concept illustration of a highway with solar panels on side structures, charging segments in guardrails, and wireless charging pads for two-wheelers.">
+          <figcaption>Concept illustration of the Maglion network, not a photo of a built system.</figcaption>
+        </figure>
+
+        <div class="stats reveal">
+          <div class="stat">
+            <p class="big">Up to ½</p>
+            <p>the battery size, if cars charge as they drive.</p>
+            <p class="note">My estimate from simulations, not a measured result.</p>
+          </div>
+          <div class="stat">
+            <p class="big">3–5×</p>
+            <p>lower infrastructure cost, by using guardrails the road already has instead of digging it up.</p>
+            <p class="note">A target, not yet proven.</p>
+          </div>
+        </div>
+
+        <div class="grid3 reveal">
+          <article class="card">
+            <h3 class="accent">Done</h3>
+            <ul>
+              <li>Computer simulations suggest it can work</li>
+              <li>Applied to Emergent Ventures for a grant</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3 class="accent">Next</h3>
+            <ul>
+              <li>A low-cost bench test of the coils</li>
+              <li>Find a power-electronics partner</li>
+            </ul>
+          </article>
+          <article class="card highlight">
+            <h3 class="accent">Why heavy vehicles gain most</h3>
+            <p>Trucks and buses carry huge, heavy batteries. Charging while moving means smaller batteries, less weight, fewer stops and no battery swapping.</p>
+          </article>
+        </div>
+        <p class="reveal"><a class="link" href="mailto:kiarase2288@gmail.com?subject=Maglion">Interested in partnering or helping with the bench test? Get in touch →</a></p>
+      </div>
+    </section>
+
+    <!-- OTHER WORK -->
+    <section class="section alt" id="work">
+      <div class="wrap">
+        <p class="kicker">Other work</p>
+        <h2 class="reveal">Things I'm building and researching</h2>
+
+        <div class="projects">
+          <article class="project reveal">
+            <div class="project-meta"><span class="tag">Research in progress</span></div>
+            <h3>Cross-embodiment robot learning</h3>
+            <p>
+              Moving what one robot learns to a different robot type is a big bottleneck in robotics.
+              My idea: classify robots the way Carl Linnaeus classified living species, grouping them
+              by how well their parts (motors, joints, torque) transfer to one another, so a robot can
+              learn from the best-matching donor type.
+            </p>
+            <ul>
+              <li>Building an SDK for robot failure logging: when an incident happens, record torque, motor power and similar data from first principles and send it to the cloud for simulation.</li>
+              <li>Early result: matching individual parts across randomised robot combinations has so far beaten transferring a whole robot to another whole robot. These are early results and may change as I test more.</li>
+            </ul>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-meta"><span class="tag">Software · live</span><a class="link" href="https://wynko.in">wynko.in ↗</a></div>
+            <h3>Wynko</h3>
+            <p>
+              A website, desktop app, Focus Lock browser extension and Android app that help people
+              stay away from distractions while studying, giving breaks and blocking autonomously.
+            </p>
+            <ul>
+              <li>Recruited a team from Reddit to build it alongside me.</li>
+              <li>When tool costs became a limit, started a side business (social media management, websites and solutions for shopkeepers) that paid for our development tools and stipends for the team.</li>
+            </ul>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-meta"><span class="tag">Tooling</span></div>
+            <h3>Low-cost AI coding setup</h3>
+            <p>Built when I couldn't afford paid tools.</p>
+            <ul>
+              <li>Hosted open-source models on free cloud notebooks like Kaggle, with Qwen as the text model.</li>
+              <li>Added LiteLLM as the gateway, Llama on Groq's free tier as the vision model, and a headless browser: the text model writes code and the vision model checks how the page renders.</li>
+              <li>Wrapped it all as one API endpoint and used it inside Claude Code.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="section" id="story">
+      <div class="wrap story">
+        <div>
+          <p class="kicker">Story</p>
+          <h2 class="reveal">Coding from a notebook</h2>
+          <p class="reveal">
+            I taught myself to code in 4th standard, with no computer at home. I wrote programs in a
+            notebook and ran them on school computers. I loved it so much I wrote 200 to 300 programs a day,
+            until my computer teachers started asking how I was doing it. I got my own computer only after
+            10th standard.
+          </p>
+          <p class="reveal">
+            I learn any technology fastest by building with it rather than reading theory.
+          </p>
+          <p class="reveal milestone"><span class="mono">IAT</span> Rank 3846 in the IISER Aptitude Test, the entrance exam for India's IISER research institutes.</p>
+        </div>
+        <div class="reveal">
+          <h3 class="subhead">Tools I use</h3>
+          <ul class="chips">
+            <li>Linux</li><li>Python</li><li>Rust</li><li>Java</li><li>Kotlin</li>
+            <li>Android apps</li><li>Windows apps</li><li>Next.js</li><li>HTML &amp; CSS</li>
+            <li>Tailwind CSS</li><li>Figma</li><li>Multi-agent AI orchestration</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <p class="kicker">Contact</p>
+        <h2 class="reveal">Let's talk</h2>
+        <p class="muted reveal">Grants, partnerships, research, or just an interesting problem: my inbox is open.</p>
+        <a class="btn primary reveal" href="mailto:kiarase2288@gmail.com">kiarase2288@gmail.com</a>
+        <ul class="socials reveal">
+          <li><a href="https://github.com/kratitocsy">GitHub · kratitocsy</a></li>
+          <li><a href="https://wynko.in">Wynko</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">© <span id="year">2026</span> Aryan Singh Sengar · Khajuraho, India</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
