@@ -720,3 +720,7 @@ body.retro .pills li { background-color: rgba(125, 255, 178, 0.12); }
 
 .note.no-thumb { grid-template-columns: 1fr; }
 .note-body p:not(.note-year) { margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.5; }
+
+/* Logo thumbnails sit straight on the page, no frame */
+.project-thumb.logo-thumb { object-fit: contain; border-color: transparent; }
+.project:hover .project-thumb.logo-thumb { border-color: transparent; }
