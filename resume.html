@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Résumé — Aryan Singh Sengar</title>
+  <meta name="description" content="Résumé of Aryan Singh Sengar: Maglion, Wynko, cross-embodiment robot learning, and a low-cost AI coding setup." />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/resume.css" />
+</head>
+<body class="resume-page">
+  <div class="resume-shell">
+    <a class="skip-link" href="#resume">Skip to Content</a>
+
+    <nav class="resume-nav">
+      <a href="index.html" class="resume-back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M12.78 5.22a.75.75 0 0 1 0 1.06L9.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z"/></svg>
+        Back to portfolio
+      </a>
+      <button type="button" class="btn btn-primary" id="print-resume">Print / Save PDF</button>
+    </nav>
+
+    <main id="resume" class="resume">
+      <header class="resume-head">
+        <div>
+          <h1>Aryan Singh Sengar</h1>
+          <p class="resume-role">Builder — 17</p>
+        </div>
+        <ul class="resume-contact">
+          <li>Khajuraho, Madhya Pradesh, India</li>
+          <li><a href="mailto:kiarase2288@gmail.com">kiarase2288@gmail.com</a></li>
+          <li><a href="https://github.com/kratitocsy" target="_blank" rel="noreferrer noopener">github.com/kratitocsy</a></li>
+          <li><a href="https://wynko.in" target="_blank" rel="noreferrer noopener">wynko.in</a></li>
+        </ul>
+      </header>
+
+      <section class="resume-section">
+        <h2>Profile</h2>
+        <p>
+          17-year-old who builds software and likes solving hard problems that look like science
+          fiction today. I work under cost constraints so that what we make stays affordable for
+          both makers and users, not a luxury. Right now I want to test low-cost wireless EV
+          charging through highway guardrails.
+        </p>
+      </section>
+
+      <section class="resume-section">
+        <h2>Projects</h2>
+
+        <article class="resume-item">
+          <div class="resume-item-head">
+            <h3>Maglion <span>· idea, applying for a grant to test it</span></h3>
+            <p>Founder</p>
+          </div>
+          <ul class="resume-bullets">
+            <li>Wireless EV charging built into highway guardrails and median barriers, with charging pads for cities, powered by solar panels along the roadside.</li>
+            <li>Goal: smaller EV batteries and less charging time. Not yet built or measured; the first step is a low-cost bench test.</li>
+            <li>Why it matters: the battery is the biggest cost of an EV. If cars charge while driving, they could carry a battery up to about half the size. This is my estimate from simulations, not a measured result.</li>
+            <li>Ran computer simulations suggesting it can work. Dynamic wireless charging has been done by an Israel-based company, but set-up and maintenance cost is the problem; Maglion aims to cut it by 3× to 5× using guardrails and solar power (a target, not yet proven).</li>
+            <li>Applied to Emergent Ventures for a grant; awaiting a reply.</li>
+          </ul>
+        </article>
+
+        <article class="resume-item">
+          <div class="resume-item-head">
+            <h3>Wynko <span>· software</span></h3>
+            <p><a href="https://wynko.in" target="_blank" rel="noreferrer noopener">wynko.in</a></p>
+          </div>
+          <ul class="resume-bullets">
+            <li>Website, desktop app, Focus Lock browser extension and Android app that help a person stay away from distractions while studying, giving breaks and blocking autonomously.</li>
+            <li>Recruited a team from Reddit to build it alongside me.</li>
+            <li>When tool costs became a limit, started a side business: managing social media (with team members handling marketing) and building websites and solutions for shopkeepers. The deals paid for our development tools and stipends for the team.</li>
+          </ul>
+        </article>
+
+        <article class="resume-item">
+          <div class="resume-item-head">
+            <h3>Low-cost AI coding setup <span>· built when I could not afford paid tools</span></h3>
+            <p>Tooling</p>
+          </div>
+          <ul class="resume-bullets">
+            <li>Hosted open-source models on free cloud notebooks such as Kaggle, with Qwen as the text model.</li>
+            <li>Added LiteLLM as the gateway, Llama on Groq's free tier as the vision model, and a headless browser. The text model writes the code and the vision model checks how the page renders.</li>
+            <li>Wrapped it all as one API endpoint and used it inside Claude Code.</li>
+          </ul>
+        </article>
+
+        <article class="resume-item">
+          <div class="resume-item-head">
+            <h3>Cross-embodiment robot learning <span>· research in progress</span></h3>
+            <p>Research</p>
+          </div>
+          <ul class="resume-bullets">
+            <li>Building an SDK for robot failure logging that lets data move from one robot type to another with maximum positive transfer.</li>
+            <li>Idea: classify robots the way Carl Linnaeus classified living species, grouping them by how much one robot's parts (motors, joints, torque) transfer positively to another, so a robot can learn from the best-matching donor type.</li>
+            <li>Early result: randomised combinations of parts from multiple robots, matched which parts give the most positive transfer, and stress-tested the combined result. So far this beats transferring a whole robot to another whole robot; early results that may change with more testing.</li>
+            <li>Status: still researching classification by maximum positive transfer, identifying failures, and 3D AI simulation for learning from other robots.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="resume-section resume-columns">
+        <div>
+          <h2>Skills</h2>
+          <dl class="resume-skills">
+            <dt>Languages</dt>
+            <dd>Java, Python, Rust, Kotlin, HTML, CSS</dd>
+            <dt>Platforms</dt>
+            <dd>Linux, Android app development, Windows app development</dd>
+            <dt>Web &amp; design</dt>
+            <dd>Next.js, Tailwind CSS, Figma</dd>
+            <dt>AI</dt>
+            <dd>Orchestrating multiple AI agents at a time</dd>
+            <dt>Learning</dt>
+            <dd>I learn any technology fastest by building with it rather than reading theory.</dd>
+          </dl>
+        </div>
+        <div>
+          <h2>Background</h2>
+          <dl class="resume-skills">
+            <dt>IISER IAT</dt>
+            <dd>Rank 3846 in the IISER Aptitude Test, the entrance exam for India's IISER research institutes.</dd>
+            <dt>Self-taught</dt>
+            <dd>Taught myself to code in 4th standard with no computer at home, writing programs in a notebook and running them on school computers; wrote 200 to 300 programs a day. Got my own computer only after 10th standard.</dd>
+            <dt>Home</dt>
+            <dd>Khajuraho, a small town in India.</dd>
+          </dl>
+        </div>
+      </section>
+    </main>
+
+    <footer class="resume-footer">
+      <p>Maglion pitch deck available on request.</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('print-resume').addEventListener('click', function () {
+      window.print();
+    });
+  </script>
+</body>
+</html>

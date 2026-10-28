@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Wynko: a focus timer with a lock, available as a website, desktop app, browser extension and Android app">
+  <defs>
+    <radialGradient id="wy-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#0e7490" stop-opacity="0.8"/>
+      <stop offset="0.6" stop-color="#134e4a" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#0b1220" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wy-ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#0e7490"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="#0b1220"/>
+  <g stroke="#16283a" stroke-width="1" opacity="0.8">
+    <path d="M0 100h1600M0 200h1600M0 300h1600M0 400h1600M0 500h1600M0 600h1600M0 700h1600M0 800h1600"/>
+    <path d="M100 0v900M200 0v900M300 0v900M400 0v900M500 0v900M600 0v900M700 0v900M800 0v900M900 0v900M1000 0v900M1100 0v900M1200 0v900M1300 0v900M1400 0v900M1500 0v900"/>
+  </g>
+  <circle cx="800" cy="440" r="320" fill="url(#wy-glow)"/>
+  <circle cx="800" cy="440" r="190" fill="#0d1a2b" stroke="#1e3a52" stroke-width="18"/>
+  <circle cx="800" cy="440" r="190" fill="none" stroke="url(#wy-ring)" stroke-width="18" stroke-linecap="round" stroke-dasharray="835 1194" transform="rotate(-90 800 440)"/>
+  <g transform="translate(800 420)" fill="none" stroke="#e2e8f0" stroke-width="10" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M-38 -10 V-40 a38 38 0 0 1 76 0 V-10"/>
+    <rect x="-58" y="-10" width="116" height="90" rx="16" fill="#102033"/>
+    <circle cx="0" cy="30" r="9" fill="#5eead4" stroke="none"/>
+  </g>
+  <text x="800" y="565" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" letter-spacing="4" fill="#94a3b8">FOCUS · BREAK · BLOCK</text>
+  <g font-family="Inter, Arial, sans-serif" font-size="20" fill="#cbd5e1" text-anchor="middle">
+    <g transform="translate(250 700)"><rect x="-120" y="-34" width="240" height="64" rx="32" fill="#102033" stroke="#2b5876" stroke-width="2"/><text y="7">Website</text></g>
+    <g transform="translate(616 700)"><rect x="-120" y="-34" width="240" height="64" rx="32" fill="#102033" stroke="#2b5876" stroke-width="2"/><text y="7">Desktop app</text></g>
+    <g transform="translate(984 700)"><rect x="-120" y="-34" width="240" height="64" rx="32" fill="#102033" stroke="#2b5876" stroke-width="2"/><text y="7">Focus Lock extension</text></g>
+    <g transform="translate(1350 700)"><rect x="-120" y="-34" width="240" height="64" rx="32" fill="#102033" stroke="#2b5876" stroke-width="2"/><text y="7">Android app</text></g>
+  </g>
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="70" y="110" font-size="34" font-weight="700" fill="#e2e8f0">WYNKO</text>
+    <text x="70" y="152" font-size="22" letter-spacing="3" fill="#94a3b8">STAY AWAY FROM DISTRACTIONS WHILE STUDYING</text>
+    <text x="70" y="830" font-size="20" fill="#5eead4">wynko.in</text>
+    <text x="1530" y="830" text-anchor="end" font-size="20" fill="#94a3b8">built with a team from Reddit</text>
+  </g>
+</svg>

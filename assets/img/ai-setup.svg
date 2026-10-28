@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Pipeline: Qwen text model on Kaggle and Llama vision model on Groq, joined by a LiteLLM gateway and a headless browser, wrapped as one API used in Claude Code">
+  <defs>
+    <linearGradient id="ai-line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#0e7490"/>
+    </linearGradient>
+    <radialGradient id="ai-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#0e7490" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#0b1220" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="ai-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#5eead4"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="#0b1220"/>
+  <g stroke="#16283a" stroke-width="1" opacity="0.8">
+    <path d="M0 100h1600M0 200h1600M0 300h1600M0 400h1600M0 500h1600M0 600h1600M0 700h1600M0 800h1600"/>
+    <path d="M100 0v900M200 0v900M300 0v900M400 0v900M500 0v900M600 0v900M700 0v900M800 0v900M900 0v900M1000 0v900M1100 0v900M1200 0v900M1300 0v900M1400 0v900M1500 0v900"/>
+  </g>
+  <circle cx="800" cy="450" r="300" fill="url(#ai-glow)"/>
+
+  <g stroke="url(#ai-line)" stroke-width="4" fill="none" marker-end="url(#ai-arrow)">
+    <path d="M470 330 C 560 330, 600 420, 650 440"/>
+    <path d="M470 600 C 560 600, 600 480, 650 465"/>
+    <path d="M950 450 H 1110"/>
+  </g>
+  <path d="M800 540 V 640" stroke="#5eead4" stroke-width="3" stroke-dasharray="8 10" fill="none"/>
+
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle">
+    <g transform="translate(320 330)">
+      <rect x="-150" y="-70" width="300" height="140" rx="18" fill="#102033" stroke="#7dd3e8" stroke-width="3"/>
+      <text y="-10" font-size="30" font-weight="700" fill="#e2e8f0">Qwen</text>
+      <text y="28" font-size="19" fill="#94a3b8">text model · Kaggle</text>
+    </g>
+    <g transform="translate(320 600)">
+      <rect x="-150" y="-70" width="300" height="140" rx="18" fill="#102033" stroke="#7dd3e8" stroke-width="3"/>
+      <text y="-10" font-size="30" font-weight="700" fill="#e2e8f0">Llama</text>
+      <text y="28" font-size="19" fill="#94a3b8">vision model · Groq</text>
+    </g>
+    <g transform="translate(800 450)">
+      <rect x="-150" y="-90" width="300" height="180" rx="22" fill="rgba(13,42,58,0.9)" stroke="#2dd4bf" stroke-width="3"/>
+      <text y="-12" font-size="32" font-weight="700" fill="#5eead4">LiteLLM</text>
+      <text y="26" font-size="19" fill="#94a3b8">one gateway</text>
+    </g>
+    <g transform="translate(800 690)">
+      <rect x="-150" y="-50" width="300" height="100" rx="16" fill="#102033" stroke="#2b5876" stroke-width="2"/>
+      <text y="-4" font-size="22" font-weight="600" fill="#e2e8f0">Headless browser</text>
+      <text y="26" font-size="17" fill="#94a3b8">checks how pages render</text>
+    </g>
+    <g transform="translate(1280 450)">
+      <rect x="-160" y="-70" width="320" height="140" rx="18" fill="#102033" stroke="#7dd3e8" stroke-width="3"/>
+      <text y="-10" font-size="28" font-weight="700" fill="#e2e8f0">One API</text>
+      <text y="28" font-size="19" fill="#94a3b8">used inside Claude Code</text>
+    </g>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="70" y="110" font-size="34" font-weight="700" fill="#e2e8f0">LOW-COST AI CODING SETUP</text>
+    <text x="70" y="152" font-size="22" letter-spacing="3" fill="#94a3b8">BUILT WHEN PAID TOOLS WERE OUT OF REACH</text>
+    <text x="70" y="830" font-size="20" fill="#5eead4">free tiers only</text>
+    <text x="1530" y="830" text-anchor="end" font-size="20" fill="#94a3b8">writes code · checks the render</text>
+  </g>
+</svg>
